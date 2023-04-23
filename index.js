@@ -1,9 +1,9 @@
+// Required packagaes
 const inquirer = require("inquirer");
 const fs = require("fs");
-const jest = require("jest");
 const { Circle, Square, Triangle } = require("./lib/shapes.js");
-const shapesTest = require("./lib/shapes.test.js");
 
+// Prompts to collect user input
 function promptInit() {
   inquirer
     .prompt([
@@ -30,6 +30,8 @@ function promptInit() {
         type: "input",
       },
     ])
+
+    // Function to generate logo object based on user input
     .then((logoData) => {
       let userShape;
 
@@ -47,18 +49,47 @@ function promptInit() {
           console.log("Oops! Your input was not recorded.");
       }
 
-      userShape.setFill(logoData.fill);
-
-      userShape.renderLogoText(logoData.text); //need to pass text and textColor
+      `${userShape.setFill(logoData.fill)}`;
+    //   `${userShape.renderLogoText(logoData.text, logoData.textColor)}`;
 
       console.log(userShape);
+
+      // Function call to compile SVG data
+      renderSVG(userShape);
     });
 }
+// Function to complie SVG data
+function renderSVG(userShape) {
+  const svgFileContent = `<svg
+            version="1.1"
+            width="300"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+            <rect width="100%" height="100%" fill="transparent" />
+            
+            ${userShape.renderUserShape()}
 
-// write SVG file 'logo.svg' + console.log('Generated logo.svg')
-// image is 300x200 pixels
+            ${userShape.renderLogoText()}
+            
+            </svg>`;
+
+  // Function call to create mySvgFile
+  writeToFile();
+
+  function writeToFile() {
+    fs.writeFile("logo.svg", svgFileContent, (err) => {
+      if (err) {
+        console.log("Oops! Your file was not created.");
+      } else {
+        console.log("Generated logo.svg");
+      }
+    });
+  }
+}
+
 
 // Function call to initialize app
 promptInit();
 
-console.log("Generated 0logo.svg)");
+
