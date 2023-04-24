@@ -65,6 +65,8 @@ function renderSVG(userShape) {
             width="300"
             height="200"
             xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:ev="http://www.w3.org/2001/xml-events"
             >
             <rect width="100%" height="100%" fill="transparent" />
             
@@ -88,8 +90,5 @@ function renderSVG(userShape) {
   }
 }
 
-
 // Function call to initialize app
 promptInit();
-
-
