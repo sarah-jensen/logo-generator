@@ -50,7 +50,7 @@ function promptInit() {
       }
 
       `${userShape.setFill(logoData.fill)}`;
-      `${userShape.renderLogoText(logoData.text, logoData.textColor)}`;
+      `${userShape.setText(logoData.textColor, logoData.text)}`;
 
       console.log(userShape);
 
