@@ -60,14 +60,14 @@ function promptInit() {
 }
 // Function to complie SVG data
 function renderSVG(userShape) {
-  const svgFileContent = `<svg
+  const svgFileContent = `
+        <svg
             version="1.1"
             width="300"
             height="200"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:ev="http://www.w3.org/2001/xml-events"
-            >
+            xmlns:ev="http://www.w3.org/2001/xml-events">
             <rect width="100%" height="100%" fill="transparent" />
             
             ${userShape.renderUserShape()}
@@ -77,17 +77,17 @@ function renderSVG(userShape) {
             </svg>`;
 
   // Function call to create mySvgFile
-  writeToFile();
-
-  function writeToFile() {
-    fs.writeFile("logo.svg", svgFileContent, (err) => {
-      if (err) {
-        console.log("Oops! Your file was not created.");
-      } else {
-        console.log("Generated logo.svg");
-      }
-    });
-  }
+  writeToFile("logo.svg", svgFileContent,);
+}
+// Function to write file
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) {
+      console.log("Oops! Your file was not created.");
+    } else {
+      console.log("Generated logo.svg");
+    }
+  });
 }
 
 // Function call to initialize app
