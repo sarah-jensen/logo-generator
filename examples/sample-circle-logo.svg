@@ -1,13 +1,17 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg  version="1.1"
-      width="300"
-      height="200"
-      xmlns="http://www.w3.org/2000/svg">
-      <rect width="100%" height="100%" fill="transparent" />
-            
-      <circle cx="150" cy="100" r="50" fill="navy"/>
 
-      <text x="150" y="110" font-size="40" fill="white" text-anchor="middle">
+        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        <svg
+            version="1.1"
+            width="300"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:ev="http://www.w3.org/2001/xml-events">
+            <rect width="100%" height="100%" fill="transparent" />
+            
+            <circle cx="150" cy="100" r="50" fill="navy"/>
+
+            <text x="150" y="110" font-size="40" fill="#c8bebe" text-anchor="middle">
             NW
          </text>
             
